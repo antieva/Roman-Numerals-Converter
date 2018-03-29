@@ -2,6 +2,10 @@
 var convertion = function (num,str) {
   var symbols = str.split(",");
   var result = "";
+  if (num < 0){
+    alert("Please enter positive number!");
+    return;
+  }
   if (symbols.length > 3){
     return;
   } else if (symbols.length === 1){
@@ -13,7 +17,9 @@ var convertion = function (num,str) {
     }
     return result;
   }
-  if (num === 1 || num === 2 || num === 3) {
+  if (num === 0){
+    return result = "";
+  } else if (num === 1 || num === 2 || num === 3) {
     var i = num;
     result = symbols[0];
     while (i != 1){
@@ -45,14 +51,19 @@ var convertion = function (num,str) {
 
 
 
+
 var romanNumTranslator = function(str){
+  var numbers = parseInt(str);
+  if (isNaN(numbers)){
+    alert("Please enter a number!");
+  } else if (numbers < 0 || numbers > 3999) {
+    alert("Please enter positive number. And you cannot count higher than 3,999 in Roman numerals.");
+    return;
+  }
   var arrOfNumbers = str.split("");
   var output = "";
-  //var romanNumerals = ["I","V","X","L","C","D","M"];
-  if (arrOfNumbers.length > 4){
-    alert("You cannot count higher than 3,999 in Roman numerals");
-    return;
-  }else if (arrOfNumbers.length == 1){
+
+  if (arrOfNumbers.length == 1){
     return output = convertion(parseInt(arrOfNumbers[0]), "I,V,X");
   } else if (arrOfNumbers.length == 2){
     output = convertion(parseInt(arrOfNumbers[0]), "X,L,C");
@@ -73,10 +84,12 @@ var romanNumTranslator = function(str){
 $(document).ready(function(){
   $("form#userInput").submit(function(event){
     event.preventDefault();
+    $(".output").hide();
     var userInput = $("#number").val();
 
     var output = romanNumTranslator(userInput);
     $(".romanNumeral").text(output);
+
+    $(".output").show();
   });
-  $("#output").show();
 });

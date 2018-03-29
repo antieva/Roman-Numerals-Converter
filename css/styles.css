@@ -1,3 +1,20 @@
-#output {
+.output {
   display: none;
+  margin-top: 20px;
+  margin-left: 25%;
+  font-weight: bold;
+}
+.jumbotron {
+  text-align: center;
+  background-color: #edf7f7;
+}
+input#number {
+  width: 30%;
+}
+.container #userInput{
+  margin-left: 25%;
+}
+.romanNumeral {
+  font-size: 20pt;
+  
 }
