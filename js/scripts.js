@@ -68,3 +68,15 @@ var romanNumTranslator = function(str){
     return output = output + convertion(parseInt(arrOfNumbers[3]), "I,V,X");
   }
 }
+
+//user interface logic starts here
+$(document).ready(function(){
+  $("form#userInput").submit(function(event){
+    event.preventDefault();
+    var userInput = $("#number").val();
+
+    var output = romanNumTranslator(userInput);
+    $(".romanNumeral").text(output);
+  });
+  $("#output").show();
+});
