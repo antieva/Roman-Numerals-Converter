@@ -1,3 +1,7 @@
+body {
+  font-size: 15pt;
+}
+
 .output {
   display: none;
   margin-top: 20px;
@@ -6,7 +10,8 @@
 }
 .jumbotron {
   text-align: center;
-  background-color: #edf7f7;
+  background-color: #491928;
+  color: white;
 }
 input#number {
   width: 30%;
@@ -16,5 +21,15 @@ input#number {
 }
 .romanNumeral {
   font-size: 20pt;
-  
 }
+
+footer {
+  font-size: 1em;
+  color: #bcb7b8;
+  margin: 200px 0 20px;
+  padding: 20px 50px;
+}
+ footer li {
+   display: inline;
+   margin: 0 80px;
+ }
